@@ -12,3 +12,7 @@ export const db = new Kysely<DB>({
         }),
     }),
 });
+
+export function add(a: number, b: number): number {
+    return a + b;
+}
