@@ -1,0 +1,19 @@
+{
+  "name": "quiz-app",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/pg": "^8.10.2",
+    "bun-types": "latest",
+    "kysely-codegen": "^0.10.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "kysely": "^0.26.3",
+    "objectid": "^3.2.1",
+    "openai": "^4.4.0",
+    "pg": "^8.11.3"
+  }
+}
