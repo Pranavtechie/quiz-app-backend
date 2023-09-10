@@ -1,8 +1,12 @@
 import { db } from './utils'
 import express, { NextFunction } from 'express'
+import getQuizQuestions from "./openai"
 import objectid from 'objectid'
+import sampleQuestion from "../sample-item.json"
+import cors from "cors"
 
 const app = express();
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded());
 
@@ -17,8 +21,8 @@ app.get('/', (req, res) => {
     res.json({ "status": "ok", "greetMessage": "Hello There!" })
 })
 
-const rows = await db.selectFrom('Question').selectAll().execute();
-console.log(rows)
+// const rows = await db.selectFrom('Question').selectAll().execute();
+// console.log(rows)
 
 app.post('/question', async (req, res) => {
     const {
@@ -44,6 +48,10 @@ app.post('/question', async (req, res) => {
 
 })
 
+app.post('/generateQuizQuestions', getQuizQuestions)
 
+app.get('/sampleQuestion', (req, res) => {
+    res.json({ "data": sampleQuestion, "status": "ok" })
+})
 
 app.listen(1338, () => console.log('Starting Server... on 1338'))

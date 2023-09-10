@@ -1,0 +1,12 @@
+{
+	"question": "Which method is used to convert a JavaScript object to a JSON string?",
+	"questionDescription": "",
+	"options": [
+		"JSON.parse()",
+		"Stringify.toJSON()",
+		"JSON.stringify()",
+		"Object.stringify()"
+	],
+	"answer": 2,
+	"explanation": "The correct answer is **JSON.stringify()**. The **JSON.stringify()** method is a built-in JavaScript method that converts a JavaScript object or value to a JSON string. It takes an object as a parameter and returns the JSON string representation of that object. This method is commonly used when working with JSON APIs to convert JavaScript objects to JSON strings before sending them over the network. \n\nHere's an example of how to use the **JSON.stringify()** method:\n\n```javascript\nconst person = {\n  name: 'John',\n  age: 30,\n  city: 'New York'\n};\n\nconst json = JSON.stringify(person);\nconsole.log(json);\n// Output: {\"name\":\"John\",\"age\":30,\"city\":\"New York\"}\n```\n\nIn this example, the **person** object is converted to a JSON string using the **JSON.stringify()** method. The resulting JSON string is then logged to the console.\n\nIt's important to note that not all JavaScript values can be converted to JSON. JSON only supports a subset of the JavaScript language, including objects, arrays, strings, numbers, booleans, and null. If a value in the object is not supported by JSON, it will be automatically omitted or transformed into null in the resulting JSON string."
+}
