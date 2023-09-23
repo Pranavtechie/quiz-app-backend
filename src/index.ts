@@ -48,6 +48,17 @@ app.post('/question', async (req, res) => {
 
 })
 
+app.post('/register', (req, res) => {
+    const { name,
+        profileImage,
+        email,
+        username,
+        loginProvider } = req.body;
+
+
+    await db.insertInto('User')
+})
+
 app.post('/generateQuizQuestions', getQuizQuestions)
 
 app.get('/sampleQuestion', (req, res) => {

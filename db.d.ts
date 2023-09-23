@@ -35,7 +35,9 @@ export interface User {
   uniqueId: string;
   username: string | null;
   name: string | null;
-  password: string | null;
+  email: string | null;
+  image: string | null;
+  loginProvider: "discord" | "github" | "google" | null;
 }
 
 export interface DB {
